@@ -24,20 +24,13 @@ Ele foi pensado para facilitar o download de conteúdos de plataformas como:
 
 ## Instalação
 
-1. Clone o repositório:
-
-```bash
-git clone https://github.com/seu-usuario/abaixador.git
-cd abaixador
-```
-
-2. Instale as dependências:
+1. Instale as dependências:
 
 ```bash
 pip install yt-dlp
 ```
 
-3. Execute o script:
+2. Execute o script:
 
 ```bash
 python link.py
@@ -52,36 +45,3 @@ URL do video: https://www.instagram.com/reel/xxxxx/
 ```
 
 O arquivo será baixado no mesmo diretório em que o script está sendo executado.
-
-## Exemplo
-
-```python
-import yt_dlp
-
-
-def baixar_video(url):
-    config = {
-        'format': 'best',
-        'outtmpl': '%(title)s.%(ext)s',
-    }
-
-    with yt_dlp.YoutubeDL(config) as ydl:
-        info = ydl.extract_info(url, download=False)
-        filename = ydl.prepare_filename(info)
-        print(f"Baixando: {filename}")
-        ydl.download([url])
-        return filename
-
-link = input("URL do video:")
-arquivo_baixado = baixar_video(link)
-```
-
-## Observações
-
-- Nem todas as plataformas permitem download de conteúdo por política da própria plataforma.
-- Algumas URLs podem exigir cookies ou outras configurações extras dependendo do site.
-- Use este projeto apenas para fins legais e conforme os termos de uso dos serviços envolvidos.
-
-## Licença
-
-Este projeto está disponível para uso pessoal e educacional.
