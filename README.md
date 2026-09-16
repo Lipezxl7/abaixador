@@ -1,6 +1,7 @@
 # MIDIA DOWNLOAD - yt_dlp
 
-Projeto simples em Python para baixar mídia diretamente pela URL usando a biblioteca `yt_dlp`.
+Projeto simples em Python para baixar mídia diretamente pela URL usando a biblioteca `yt_dlp`
+e criando interface usando a biblioteca do `streamlit`.
 
 Ele foi pensado para facilitar o download de conteúdos de plataformas como:
 
