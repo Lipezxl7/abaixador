@@ -1,5 +1,4 @@
 import yt_dlp
-from enviando import enviar_na_raca
 
 def baixar_video(url):
     config = {
@@ -19,9 +18,5 @@ def baixar_video(url):
         return filename
 
 # Uso:
-link = input("Cole o link (YT, TikTok ou Insta): ")
+link = input("URL do video:")
 arquivo_baixado = baixar_video(link)
-
-# Agora envia pro WhatsApp
-numero_destino = input("Digite o número do WhatsApp (com código do país, ex: 5511999999999): ")
-enviar_na_raca(arquivo_baixado, numero_destino)
