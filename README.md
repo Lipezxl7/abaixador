@@ -1,11 +1,12 @@
-# MIDIA DOWNLOAD - yt_dlp
+# MIDIA DOWNLOADER
 
-Projeto simples em Python para baixar mídia diretamente pela URL usando a biblioteca `yt_dlp`
-e criando interface usando a biblioteca do `streamlit`.
+![alt text](assents/print.png)
 
-Ele foi pensado para facilitar o download de conteúdos de plataformas como:
+Projeto simples em Python para baixar mídia pela URL usando `yt_dlp` com interface em `Streamlit`.
 
-- Instagram Reels e posts
+Ele foi pensado para facilitar o download de conteúdos como:
+
+- Reels e posts do Instagram
 - Vídeos do TikTok
 - Imagens do Pinterest
 - Lives e vídeos da Twitch
@@ -14,35 +15,35 @@ Ele foi pensado para facilitar o download de conteúdos de plataformas como:
 ## Funcionalidades
 
 - Download de mídia apenas com a URL
-- Extração automática do nome do arquivo
-- Salva o conteúdo no diretório atual do projeto
-- Interface simples via terminal
+- Interface simples em navegador
+- Download direto para o navegador
+- Salva arquivo temporariamente e inicia o download normalmente
 
 ## Requisitos
 
 - Python 3.8+
-- Biblioteca `yt_dlp`
+- `yt_dlp`
+- `streamlit`
 
 ## Instalação
 
-1. Instale as dependências:
+1. Abra o terminal na pasta do projeto.
+
+2. Instale as bibliotecas:
 
 ```bash
-pip install yt-dlp
+pip install yt-dlp streamlit
 ```
 
-2. Execute o script:
+3. Execute a aplicação:
 
 ```bash
-python link.py
+streamlit run link.py
 ```
 
 ## Como usar
 
-Ao rodar o programa, você será solicitado a inserir a URL da mídia:
-
-```bash
-URL do video: https://www.instagram.com/reel/xxxxx/
-```
-
-O arquivo será baixado no mesmo diretório em que o script está sendo executado.
+1. Abra o navegador que o Streamlit abrir.
+2. Cole a URL da mídia no campo indicado.
+3. Clique em "Baixar".
+4. O download será iniciado diretamente no navegador.
