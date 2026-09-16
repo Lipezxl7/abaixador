@@ -86,16 +86,25 @@ if st.button("Baixar"):
 
         plataforma = identificar_plataforma(url)
 
-        with st.spinner("Identificando a mídia..."):
-            titulo = obter_titulo(url)
-
-        st.info(f"Plataforma: {plataforma} | Título: {titulo}")
+        try:
+            with st.spinner("Identificando a mídia..."):
+                titulo = obter_titulo(url)
+            st.info(f"Plataforma: {plataforma} | Título: {titulo}")
+        except Exception:
+            st.info(f"Plataforma detectada: {plataforma}")
 
         if plataforma == 'YouTube':
             st.error(
                 "Não é possível baixar vídeos do YouTube neste deploy. "
                 "O YouTube bloqueia esse tipo de uso no ambiente de hospedagem e o download não funciona aqui. "
                 "Use outras plataformas como Instagram, TikTok, Pinterest ou Twitch."
+            )
+            st.stop()
+
+        if plataforma == 'Instagram':
+            st.error(
+                "Este link do Instagram exige login ou cookies para ser acessado. "
+                "No deploy isso normalmente não funciona, então este tipo de conteúdo não pode ser baixado aqui."
             )
             st.stop()
 
@@ -114,7 +123,14 @@ if st.button("Baixar"):
 
                     st.success("Download iniciado no navegador.")
             except Exception as erro:
-                st.error("Não foi possível baixar esse link no momento. Verifique a URL ou a plataforma.")
+                mensagem = str(erro).lower()
+                if 'requested content is not available' in mensagem or 'rate-limit' in mensagem or 'login required' in mensagem or 'cookies' in mensagem:
+                    st.error(
+                        "Este link exige autenticação ou está bloqueado pela plataforma. "
+                        "No deploy, esse tipo de conteúdo não pode ser baixado automaticamente."
+                    )
+                else:
+                    st.error("Não foi possível baixar esse link no momento. Verifique a URL ou a plataforma.")
                 st.caption(str(erro))
 
     except Exception as erro:
