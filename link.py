@@ -11,7 +11,8 @@ def baixar_video_para_tempo(url):
     pasta_temp = tempfile.gettempdir()
 
     config = {
-        'format': 'best',
+        'format': 'bv*+ba/b',
+        'merge_output_format': 'mp4',
         'outtmpl': os.path.join(pasta_temp, '%(title)s.%(ext)s'),
         'noplaylist': True,
     }
