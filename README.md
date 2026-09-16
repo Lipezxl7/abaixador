@@ -53,5 +53,5 @@ streamlit run link.py
 ## Observações
 
 - O YouTube não funciona neste deploy por limitações de ambiente e bloqueios da plataforma.
-- O Projeto funciona melhor com uso local pois como o deploy usa ip de data center o youtube bloqueia.
-- Use apenas em conteúdos permitidos e conforme as regras do serviço.
+- O Projeto funciona melhor com uso local pois como o deploy usa ip de data center e o youtube bloqueia.
+- aplicativos como Instagram ou Pintrest precisam de cookies ou forma de login para abaixar video.
